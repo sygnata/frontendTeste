@@ -25,10 +25,85 @@ body {
 }
 
 #main {
-  background: blue;
   grid-area: main;
+  /* display: grid; */
+}
+.primary {
+  display: grid;
+  grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+  grid-template-areas:
+    "imgPrimary h3Primary h3Primary"
+    "imgPrimary spanPrimary spanPrimary"
+    "imgPrimary btn-main .";
+  width: 100%;
 }
 
+.primary img {
+  width: 450px;
+  height: 250px;
+  grid-area: imgPrimary;
+}
+
+.primary h3 {
+  color: #9a9c9a;
+  grid-area: h3Primary;
+}
+.primary span {
+  color: #929292;
+  grid-area: spanPrimary;
+}
+.btn-main {
+  grid-area: btn-main;
+  height: 2rem;
+  width: 7rem;
+  border: none;
+  background: #36b4c2;
+  font-family: "IBM Plex Mono";
+  color: #fff;
+}
+
+.secondary {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-bottom: -15rem;
+}
+
+.inside {
+  width: 310px;
+  display: grid;
+  grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr 1fr;
+  grid-template-areas:
+    "imgInside imgInside imgInside "
+    "h4Inside h4Inside ."
+    "spanInside spanInside spanInside "
+    "btn-secondary btn-secondary btn-secondary ";
+}
+.inside img {
+  width: 300px;
+  height: 160px;
+  grid-area: imgInside;
+}
+
+.titulo {
+  grid-area: h4Inside;
+}
+.inside span {
+  grid-area: spanInside;
+  margin-top: -6rem;
+}
+.btn-secondary {
+  grid-area: btn-secondary;
+  height: 2rem;
+  width: 7rem;
+  border: none;
+  background: #36b4c2;
+  font-family: "IBM Plex Mono";
+  color: #fff;
+  margin-top: -10rem;
+}
 #aside {
   grid-area: aside;
 }
@@ -40,7 +115,7 @@ body {
   justify-content: space-between;
   align-items: center;
   align-content: space-between;
-  margin: 0 auto;
+  margin: 1rem auto;
 }
 
 .aside-inside {
@@ -53,7 +128,7 @@ body {
   justify-content: center;
   /* align-items: center; */
   align-content: center;
-  margin: 1rem auto;
+  margin: 2rem auto;
 }
 
 .aside-inside img {
@@ -67,7 +142,7 @@ body {
   grid-area: h4;
   padding: 0;
   margin-top: -2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2.5rem;
   height: 25%;
 }
 .aside-inside span {
@@ -79,7 +154,7 @@ body {
 #aside h3 {
   color: #afafaf;
   text-align: center;
-  margin: 1rem 10rem;
+  margin: 1rem 10rem 4rem 10rem;
 }
 
 #footer {
@@ -99,15 +174,20 @@ body {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  padding-left: 1rem;
+  /* justify-content: flex-start; */
+  align-items: flex-start;
+  align-content: flex-start;
+  width: 30vw;
+  height: 100%;
+  margin-left: 1rem;
+  /* TESTES */
+  /* display: grid;
   width: 25vw;
+  margin-left: 1rem; */
 }
 
 .contacts h3 {
   padding-right: 1rem;
-  border-right: 2px solid rgba(0, 0, 0, 0.5);
   color: #9a9c9a;
 }
 .contacts span {
@@ -122,16 +202,17 @@ body {
   justify-content: start;
   align-items: start;
 
-  width: 25vw;
+  width: 20vw;
+  margin-left: 10rem;
 }
 .links h3 {
   padding-right: 1rem;
   /* padding-left: 1rem; */
-  border-right: 2px solid rgba(0, 0, 0, 0.5);
   color: #9a9a9a;
 }
 .links a {
   margin-bottom: 0.3rem;
+  color: #36b4c2;
 }
 
 .about {
@@ -147,7 +228,6 @@ body {
 .about h3 {
   padding-right: 1rem;
   /* padding-left: 1rem; */
-  border-right: 2px solid rgba(0, 0, 0, 0.5);
   color: #9a9c9a;
 }
 
