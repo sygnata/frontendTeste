@@ -9,7 +9,7 @@ body {
   display: grid;
   /* height: 100%;
   width: 100%; */
-  grid-template: 1fr 3fr 2fr 1fr/1fr 1fr 1fr;
+  grid-template: 0.5fr 3fr 1.5fr 0.7fr/1fr 1fr 1fr;
   /* grid-template-rows: 1fr 3fr 2fr 1fr; */
   grid-gap: 5px;
   grid-template-areas:
@@ -20,13 +20,88 @@ body {
 }
 
 #header {
-  background: red;
   grid-area: header;
 }
+.header {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template: 1fr 1fr/1fr 1fr 1fr;
+  grid-gap: 5px;
+  grid-template-areas:
+    "img-social-container . search"
+    "img-logo navibar navibar";
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: 1px solid rgba(154, 156, 154, 0.2);
+}
+.img-social-container {
+  grid-area: img-social-container;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 2rem;
+}
+.img-social {
+  height: 30px;
+  width: 30px;
+  margin-left: 0.5rem;
+}
+.img-logo {
+  width: 400px;
+  height: 80px;
+  grid-area: img-logo;
+}
+.search {
+  grid-area: search;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 2rem;
+}
+#textSearch {
+  height: 1.4rem;
+  width: 15rem;
+  background: #252525;
+  color: #9a9c9a;
+  /* font-size: 0.75rem; */
+  border-radius: 2% 2% 2% 2% / 20% 20% 20% 20%;
 
+  border: none;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+#btnSearchSubmit {
+  margin-left: 0.5rem;
+  height: 1.5rem;
+  width: 4rem;
+  border: none;
+  background: #36b4c2;
+  font-family: "IBM Plex Mono";
+  color: #fff;
+  border-radius: 10% 10% 10% 10% / 20% 20% 20% 20%;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.navibar {
+  grid-area: navibar;
+  width: 97%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 2rem;
+}
+.navibar a {
+  font-family: "";
+  margin-left: 1.5rem;
+  font-family: "IBM Plex Mono";
+  letter-spacing: 0.15rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #9a9c9a;
+}
 #main {
   grid-area: main;
   /* display: grid; */
+  border-bottom: 1px solid rgba(154, 156, 154, 0.2);
 }
 .primary {
   display: grid;
@@ -36,6 +111,10 @@ body {
     "imgPrimary spanPrimary spanPrimary"
     "imgPrimary btn-main .";
   width: 100%;
+  min-height: 400px;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(154, 156, 154, 0.2);
 }
 
 .primary img {
@@ -60,15 +139,18 @@ body {
   background: #36b4c2;
   font-family: "IBM Plex Mono";
   color: #fff;
+  border-radius: 10% 10% 10% 10% / 20% 20% 20% 20%;
 }
 
 .secondary {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   width: 100%;
   margin-bottom: -15rem;
+  margin-top: 1rem;
 }
 
 .inside {
@@ -82,15 +164,21 @@ body {
     "btn-secondary btn-secondary btn-secondary ";
 }
 .inside img {
+  display: flex;
+  flex-wrap: wrap;
   width: 300px;
   height: 160px;
   grid-area: imgInside;
 }
 
 .titulo {
+  display: flex;
+  flex-wrap: wrap;
   grid-area: h4Inside;
 }
 .inside span {
+  display: flex;
+  flex-wrap: wrap;
   grid-area: spanInside;
   margin-top: -6rem;
 }
@@ -103,6 +191,7 @@ body {
   font-family: "IBM Plex Mono";
   color: #fff;
   margin-top: -10rem;
+  border-radius: 10% 10% 10% 10% / 20% 20% 20% 20%;
 }
 #aside {
   grid-area: aside;
@@ -132,6 +221,8 @@ body {
 }
 
 .aside-inside img {
+  display: flex;
+  flex-wrap: wrap;
   width: 80px;
   height: 80px;
   grid-area: img;
@@ -139,6 +230,8 @@ body {
   margin-left: 1rem;
 }
 .aside-inside h4 {
+  display: flex;
+  flex-wrap: wrap;
   grid-area: h4;
   padding: 0;
   margin-top: -2rem;
@@ -146,6 +239,8 @@ body {
   height: 25%;
 }
 .aside-inside span {
+  display: flex;
+  flex-wrap: wrap;
   grid-area: span;
   margin-top: -3.6rem;
   margin-bottom: 1rem;
@@ -240,15 +335,28 @@ body {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-end;
-  margin-right: 1rem;
+  align-items: flex-start;
+  margin-left: 2rem;
 
   width: 25vw;
 }
 
 .newsletter h3 {
-  padding-right: 1rem;
-  padding-left: 1rem;
+  /* padding-right: 1rem;
+  padding-left: 1rem; */
   border-right: 2px solid rgba(0, 0, 0, 0.5);
   color: #9a9c9a;
+}
+#email,
+#password {
+  background: #3a3a3a;
+  border: none;
+  margin-bottom: 0.5rem;
+}
+#submitNews {
+  border: none;
+  background: #36b4c2;
+  font-family: "IBM Plex Mono";
+  color: #fff;
+  border-radius: 10% 10% 10% 10% / 20% 20% 20% 20%;
 }
